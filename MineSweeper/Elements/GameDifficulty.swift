@@ -8,9 +8,11 @@
 
 import Foundation
 
-enum GameDifficulty{
-    case Easy, Medium, Hard
+enum GameDifficulty: String{
+    case Easy = "Easy", Medium = "Medium", Hard = "Hard"
 
+//    var rawValue: self.RawValue { get }
+    
     var size: (width:Int, height: Int) {
 
         switch self{
@@ -68,4 +70,5 @@ enum GameDifficulty{
                 return 3
         }
     }
+    
 }

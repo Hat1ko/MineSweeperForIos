@@ -39,6 +39,10 @@ class Tile: Equatable{
         }
     }
     
+    func squareDistFromTile(_ tile:Tile) -> Int {
+        return (x - tile.x)*(x - tile.x) + (y - tile.y)*(y - tile.y)
+    }
+    
     static func ==(t1: Tile, t2: Tile) -> Bool{
         return t1.x == t2.x && t1.y == t2.y
     }
