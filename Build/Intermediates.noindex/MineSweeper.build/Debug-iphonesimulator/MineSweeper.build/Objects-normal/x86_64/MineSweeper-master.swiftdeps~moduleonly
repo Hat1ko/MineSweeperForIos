@@ -1,0 +1,12 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "14bb05d32df10298e3f98860f7d80324"
+build_time: [1577436268, 956171000]
+inputs:
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/Engine/GraphicsBuilder.swift": [1577361546, 664791745]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/GameScene.swift": [1577361457, 614899054]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/GameViewController.swift": [1577361389, 861324610]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/Elements/Tile.swift": [1577363031, 287324957]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/Elements/GameDifficulty.swift": [9223372036, 854775807]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/Elements/Board.swift": !dirty [1577436244, 657472048]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/AppDelegate.swift": [1577361389, 843291949]
+  "/Users/Hati_ko/Desktop/Swift/MineSweeper/MineSweeper/Engine/PileProcessor.swift": [1577361581, 975103110]
