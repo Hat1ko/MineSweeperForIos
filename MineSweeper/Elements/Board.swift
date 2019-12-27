@@ -47,8 +47,34 @@ class Board{
         score = nil
         
         tiles = [Tile]()
+        
+        assert(numberOfMines < width * height,
+               "Number of mines cant be equal or bigger than total number if tiles within the game")
     }
     
+    func initMines(_ playedTile: Tile?) -> Void{
+        var possibilities = [Tile]()
+        
+        var protectedTiles = [Tile]()
+        if let playedTile = playedTile{
+            protectedTiles.append(contentsOf: getNeighbours(playedTile))
+            protectedTiles.append(playedTile)
+        }
+
+        for tile in tiles{
+            if protectedTiles.contains(tile){
+                possibilities.append(tile)
+            }
+        }
+        
+        for _ in 0..<numberOfMines {
+            let i = Int(arc4random_uniform(UInt32(possibilities.count)))
+            possibilities[i].setMine()
+            possibilities.remove(at: i)
+        }
+    }
+    
+    //if cords are within board
     func isInBoard(_ x:Int, _ y:Int) -> Bool{
         return x > -1 && y > -1 && x < self.width && y < self.height
     }
@@ -61,7 +87,6 @@ class Board{
         if isInBoard(x, y){
             return tiles[getTileIndex(x, y)]
         }
-        
         return nil
     }
     
@@ -83,7 +108,7 @@ class Board{
     
     func flag(_ x:Int, _ y:Int) -> [Tile]{
         if let tile = getTile(x, y){
-            flag(tile)
+            return flag(tile)
         }
         return [Tile]()
     }
@@ -106,6 +131,7 @@ class Board{
                         numOfUnrevealed += 1
                     }
                 }
+                
                 if numOfUnrevealed == tile.numOfMinesAround{
                     for n in neighbours{
                         if !n.isRevealed && !n.isFlagged {

@@ -31,7 +31,11 @@ class Tile: Equatable{
     func setMine() -> Void{
         if(!isMine){
             isMine = true
-            //add logic for counting neighbours around
+            
+            let neighbours = board.getNeighbours(self)
+            for n in neighbours{
+                n.numOfMinesAround += 1
+            }
         }
     }
     
